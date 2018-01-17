@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 import './App.css';
-import MostPlayed from './components/MostPlayed';
+import Hero from './components/Hero';
+import Map from './components/Map';
 import { fetchData } from "./utilities/helpers";
 
 class App extends Component {
   state = {
-    heroes: []
+    heroes: [],
+    maps: []
   };
 
   componentWillMount() {
-    fetchData()
+    fetchData('hero')
       .then(result => this.setState({heroes: result.data}));
+    fetchData('map')
+      .then(result => this.setState({maps: result.data}));
   };
 
   render() {
     return (
       <div className="App">
-        {this.state.heroes.map(hero => {
+
+        {this.state.maps.map((map, index) => {
           return (
-            <React.Fragment>
-              <h4>{hero.name}</h4>
-              <h6>{hero.age}</h6>
-              <p>{hero.description}</p>
-              <p><small>{hero.base_of_operations}</small></p>
-            </React.Fragment>
+            <Map key={index} name={map.name} location={map.location} />
           )
         })}
-        <MostPlayed />
+
+        {this.state.heroes.map((hero, index) => {
+          return (
+            <Hero key={index} name={hero.name} age={hero.age} description={hero.description} base={hero.base_of_operations} />
+          )
+        })}
+
       </div>
     );
   }
