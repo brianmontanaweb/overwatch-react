@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Hero from './components/Hero';
 import Map from './components/Map';
 import { fetchData } from "./utilities/helpers";
