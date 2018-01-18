@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Hero from './components/Hero';
 import Map from './components/Map';
-import { fetchData } from "./utilities/helpers";
+import Navigation from './components/Navigation';
+import {fetchData} from "./utilities/helpers";
 
 class App extends Component {
   state = {
@@ -20,15 +21,18 @@ class App extends Component {
     return (
       <div className="App">
 
+        <Navigation/>
+
         {this.state.maps.map((map, index) => {
           return (
-            <Map key={index} name={map.name} location={map.location} />
+            <Map key={index} name={map.name} location={map.location}/>
           )
         })}
 
         {this.state.heroes.map((hero, index) => {
           return (
-            <Hero key={index} name={hero.name} age={hero.age} description={hero.description} base={hero.base_of_operations} />
+            <Hero key={index} name={hero.name} age={hero.age} description={hero.description}
+                  base={hero.base_of_operations}/>
           )
         })}
 

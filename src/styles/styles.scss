@@ -8,12 +8,16 @@
   font-size: 2.5rem;
   text-align: center;
   background-color: rgba(aqua, 0.75);
+  border-top: 0.25rem solid white;
+  border-bottom: 0.25rem solid white;
 }
 
 .hl-secondary {
   font-size: 2rem;
   text-align: center;
   background-color: rgba(aqua, 0.75);
+  border-top: 0.25rem solid white;
+  border-bottom: 0.25rem solid white;
 }
 
 .body-primary {
@@ -29,12 +33,17 @@
   text-align: center;
   width: 75%;
   margin: 1rem auto;
-  border-radius: 0.25rem;
+  border-radius: 0.5rem;
   box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.5);
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .card-image {
   max-width: 100%;
+}
+
+.bg-overlay {
+  background-image: linear-gradient(45deg, transparent 60%, black 60%);
 }
