@@ -7,7 +7,17 @@ import {fetchData} from "./utilities/helpers";
 class App extends Component {
   state = {
     heroes: [],
-    maps: []
+    maps: [],
+    navItems: [{
+      name: 'Heroes',
+      path: 'heroes'
+    }, {
+      name: 'Maps',
+      path: 'maps'
+    }, {
+      name: 'Favorites',
+      path: 'favorites'
+    }]
   };
 
   componentWillMount() {
@@ -21,7 +31,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Navigation/>
+        <Navigation navItems={this.state.navItems} />
 
         {this.state.maps.map((map, index) => {
           return (

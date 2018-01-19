@@ -5,9 +5,13 @@ class Navigation extends React.Component {
     return (
       <nav>
         <ul>
-          <li>Thing 1</li>
-          <li>Thing 2</li>
-          <li>Thing 3</li>
+          {this.props.navItems.map(navItem => {
+            return (
+              <li>
+                <a href={`#${navItem.path}`}>{navItem.name}</a>
+              </li>
+            )
+          })}
         </ul>
       </nav>
     )
